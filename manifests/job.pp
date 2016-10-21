@@ -57,7 +57,7 @@ define cron::job(
       ensure  => $real_ensure,
       owner   => 'root',
       group   => 'root',
-      mode    => $mode,
+      mode    => "$mode",
       path    => "/etc/cron.d/${title}",
       content => template( 'cron/job.erb' );
   }
